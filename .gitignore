@@ -1,0 +1,10 @@
+venv/
+.idea/
+__p
+*.pyc
+__pycache__/
+session/
+results/
+*.svg
+*.png
+*.npy

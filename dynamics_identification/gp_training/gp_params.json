@@ -1,0 +1,54 @@
+{
+    "likelihood.raw_task_noises": [
+        -2.2400319576263428,
+        -2.295145273208618,
+        -2.2837510108947754
+    ],
+    "likelihood.raw_task_noises_constraint.lower_bound": 9.999999747378752e-05,
+    "likelihood.raw_task_noises_constraint.upper_bound": Infinity,
+    "model.likelihood.raw_task_noises": [
+        -2.2400319576263428,
+        -2.295145273208618,
+        -2.2837510108947754
+    ],
+    "model.likelihood.raw_task_noises_constraint.lower_bound": 9.999999747378752e-05,
+    "model.likelihood.raw_task_noises_constraint.upper_bound": Infinity,
+    "model.covar_module.raw_outputscale": [
+        -2.3017187118530273,
+        -1.9875644445419312,
+        1.9750769138336182
+    ],
+    "model.covar_module.base_kernel.raw_lengthscale": [
+        [
+            [
+                1.5438340902328491,
+                1.2894139289855957,
+                1.4061449766159058,
+                1.1219420433044434,
+                1.4003777503967285
+            ]
+        ],
+        [
+            [
+                2.1379947662353516,
+                1.2150319814682007,
+                0.9939048886299133,
+                1.8013626337051392,
+                1.8979159593582153
+            ]
+        ],
+        [
+            [
+                -1.0663363933563232,
+                -2.2896199226379395,
+                -1.2343946695327759,
+                -1.8197360038757324,
+                0.7786033153533936
+            ]
+        ]
+    ],
+    "model.covar_module.base_kernel.raw_lengthscale_constraint.lower_bound": 0.0,
+    "model.covar_module.base_kernel.raw_lengthscale_constraint.upper_bound": Infinity,
+    "model.covar_module.raw_outputscale_constraint.lower_bound": 0.0,
+    "model.covar_module.raw_outputscale_constraint.upper_bound": Infinity
+}

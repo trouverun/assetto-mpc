@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+service ModelPredictiveController {
+    rpc initialize_solver (Settings) returns (Response);
+    rpc solve (Problem) returns (Solution);
+    rpc learn_from_data (LearningData) returns (Response);
+    rpc done(Empty) returns (Empty);
+}
+
+message Empty {
+
+}
+
+message Settings {
+    int32 mpc_N = 1;
+    float mpc_sample_time = 2;
+    bytes bicycle_params = 3;
+    int32 n_midpoints = 4;
+    bytes midpoints = 5;
+    int32 n_refpoints = 6;
+    bytes refpoints = 7;
+    bool use_gp = 8;
+    bool constraint_tightening = 9;
+}
+
+message Response {
+    int32 status = 1;
+}
+
+message LearningData {
+    bytes pos_info = 1;
+    bytes inputs = 2;
+    bytes outputs = 3;
+}
+
+message Problem {
+    bytes initial_state = 1;
+    float max_speed = 2;
+    bool delay_compensation = 3;
+}
+
+message Solution {
+    bytes state_horizon = 1;
+    bytes control_horizon = 2;
+    bytes track_tighteners = 3;
+    bool success = 4;
+}
+
