@@ -1,0 +1,3 @@
+[submodule "acados-rpc"]
+	path = acados-rpc
+	url = https://github.com/trouverun/acados-rpc
