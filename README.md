@@ -1,7 +1,7 @@
 # assetto-mpc
 This repository implements a nonlinear MPC, which uses the combination of a bicycle model and a sparse Gaussian Process (GP) to accurately model the nonlinear vehicle dynamics of a race car. The GP is used to correct any prediction errors in the bicycle model, which might arise due to varying tire properties or weather conditions. The training data of the GP is updated during execution to better mitigate these effects.
 
-The combined dynamics model is used to formulated a stochastic MPC, which propagates the GP variance through the prediction horizon. As the position uncertainty of the car grows through the horizon, the track width is tightened by the same amount, as illustrated below:
+The combined dynamics model is used to formulate a stochastic MPC, which propagates the GP variance through the prediction horizon. As the position uncertainty of the car grows through the horizon, the track width is tightened by the same amount, as illustrated below:
 
 ![tube](https://github.com/user-attachments/assets/00c0edb4-309e-4ea0-9005-47594ea5b45a)
 
