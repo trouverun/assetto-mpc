@@ -1,11 +1,9 @@
 # assetto-mpc
-This repository implements a nonlinear MPC, which uses the combination of a bicycle model and a sparse Gaussian Process (GP) to accurately model the nonlinear vehicle dynamics of a race car. The GP is used to correct any prediction errors in the bicycle model, which might arise due to varying tire properties or weather conditions. The training data of the GP is updated during execution to better mitigate these effects.
+This repository implements a nonlinear MPC, which uses the combination of a bicycle model and a sparse Gaussian Process (GP) to accurately model the nonlinear vehicle dynamics of a race car. The GP is used to correct any prediction errors in the bicycle model, which might arise due to varying tire properties or weather conditions. The training data of the GP is updated during execution to minimize the posterior variance. 
 
-The combined dynamics model is used to formulate a stochastic MPC, which propagates the GP variance through the prediction horizon. As the position uncertainty of the car grows through the horizon, the track width is tightened by the same amount, as illustrated below:
+The combined dynamics model is used to formulate a stochastic MPC with variance-based constraint tightening and a contouring cost.
 
-![tube](https://github.com/user-attachments/assets/00c0edb4-309e-4ea0-9005-47594ea5b45a)
-
-This improves the robustness to model uncertainty, and ensures that the car always remains within the race track boundaries. The constraint-tightening mechanism is paired with a contouring-control cost function, which incentivces fast progress through the race track. 
+<img src="https://media.githubusercontent.com/media/trouverun/filesizeworkaround/main/badweather.gif"/>
 
 ## Results
 The implemented Uncertainty-Aware-MPC (UCA-MPC) was compared to a nominal MPC, which neglects the sparse GP dynamics and constraint tightening. The evaluation metric was the mean of 9 best lap times (out of 10 attempts) on the Ricardo Tormo circuit, recorded in ideal weather conditions. The results of this experiment are shown below:
@@ -21,7 +19,7 @@ Next, taking advantage of the detailed simulation of ACC, the two controllers we
 Compared to the nominal MPC, which Did Not Finish (DNF) in any of its attempts, the UCA-MPC was able to record successful laps even in the medium rain weather conditions. This highlights the improved robustness against modelling uncertainty.
  
 
-## See it in action (youtube)
+## See it in action (youtube link)
 [![See it in action](https://img.youtube.com/vi/SENTHq9ONTw/0.jpg)](https://www.youtube.com/watch?v=SENTHq9ONTw)
 
 
